@@ -3,8 +3,8 @@ import requests
 import pandas as pd
 
 
-def busca_api():
-    cidade = input('Informe o Municipio: ')
+def busca_api(cidade):
+    
     url = "https://elastic-leitos.saude.gov.br/leito_ocupacao/_search"
     payload = {"size": 500, "query": {"match": {"municipio": cidade}}}
 
@@ -57,11 +57,11 @@ def busca_api():
                     data_notificacao = str(resumo['dataNotificacaoOcupacao'])
                     lista_data_ultima_notificao.append(data_notificacao)
 
-    dados = {"Unidade": lista_unidades, "Obitos": lista_obito, "Qtd Respiradores": lista_respiradores,
+            
+    return  {"Unidade": lista_unidades, "Obitos": lista_obito, "Qtd Respiradores": lista_respiradores,
              "Leitos UTI": lista_uti, "Ocupacao UTI": lista_ocupacao_uti,
              "Oferta Leitos Clinicos": lista_oferta_srga_cli, "Ocupacao Leitos Cli": lista_ocupacao_srga_cli,
              "Data da notificacao": lista_data_ultima_notificao}
 
-    return dados
     
     
