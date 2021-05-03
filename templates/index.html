@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    
+
+<head>
+    <meta charset="utf-8">
+    <title>Título da página exemplo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    
+</head>
+  
+<body>
+
+    <div id="covid" class="container">
+            <img  id="imgcovid" src="{{ url_for('static', filename='covid.jpg')}}" alt="">
+    </div>
+<h4 id="titulo">CONSULTAR OCUPAÇÃO HOSPITALAR - CORONAVÍRUS</h4>
+    <div id="cont" class="container">
+        
+            <label  id="label "><strong>Informe o Município:</label>
+     
+              <input type="email" class="form-control" id="colFormLabel" placeholder="Município">
+              <button id="btn" type="button" class="btn btn-success">Success</button>
+    </div>
+    <div id="tabela">
+    <table class="table table-bordered">
+    <thead class="thead-light" >
+      <tr>
+        <th scope="col">NÚMERO</th>
+        <th scope="col">ÓRGAO JULGADOR</th>
+        <th scope="col">CLASSE</th>
+        <th scope="col">RESPONSÁVEL</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+     
+        <td> item.numero </td>
+        <td>item.orga</td>
+        <td> item.classe</td>
+        <td> item.responsável</td>
+        
+      </tr>
+    
+      
+    </tbody>
+  </table>
+  </div>
+
+  
+</body>
+
+</html>

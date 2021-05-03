@@ -1,0 +1,50 @@
+body{
+background-color:rgb(53, 180, 174);
+}
+
+#titulo{
+margin-top: 2%;
+margin-left:30%;
+
+
+}
+
+#label{
+
+width: 100%;
+
+
+
+}
+#btn{
+
+margin-left:5%;
+
+}
+
+
+#cont{
+
+width: 40%;
+margin-left: auto;
+margin-top: 3%;
+
+}
+
+#imgcovid{
+
+    margin-left: 35%;
+    margin-top: 5%;
+    border-radius: 30px;
+    width: 30% ;
+
+}
+
+#tabela{
+
+    width: 40% ;
+    margin-left: 30%;
+    margin-top: 5%;
+    text-align: center;
+
+}
