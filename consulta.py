@@ -1,7 +1,5 @@
 import requests
 
-import pandas as pd
-
 
 def busca_api(cidade):
         
