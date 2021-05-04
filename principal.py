@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask import Flask
 from consulta import busca_api
 
@@ -10,8 +10,13 @@ def hello_world():
 
 @app.route('/index', methods=['GET','POST'])
 def index():
-   
-    contexto = busca_api('Aracaju')
-
-    return render_template('index.html', context=contexto)
+  
+    if  request.method == 'POST':
+        municipio = request.form['cidade']
+        contexto = busca_api(municipio)
+        return render_template('index.html', context=contexto)
+    
+    else:
+    
+        return render_template('index.html')
 

@@ -21,12 +21,11 @@
     
 
     <div id="cont">
-      <form method="POST"></form>  
+      <form action="/index" method="POST">
             <label  id="label "><strong>Informe o Município:</label>
-     
               <input style="display:flexbox;" class="form-control" type="text", id="cidade" name="cidade" placeholder="Município">
       </form>
-              <button  type="submit" style="border-radius: 5px; margin-left:40%; margin-top: 3%; display: inline-flex;" id="btn" class="btn btn-success">Consultar</button>
+              <button  type="submit"  id="btn" class="btn btn-success">Consultar</button>
     </div>
 
     {% block content %}
