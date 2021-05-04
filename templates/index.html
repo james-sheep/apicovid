@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     <script src="{{url_for('static',filename='js/index.js')}}"   ></script>
+    <script data-ad-client="ca-pub-7609529074113481" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
   
 <body>
@@ -15,21 +16,21 @@
     <div id="covid">
             <img  id="imgcovid" src="{{ url_for('static', filename='covid.jpg')}}" alt="">
     </div>
-    <h3 id="titulo">CORONAVÍRUS</h3>
+    <h3 style="color: rgb(87, 138, 139);" id="titulo">CORONAVÍRUS</h3>
   
     <h6 id="titulo">CONSULTAR OCUPAÇÃO HOSPITALAR</h6>
     
 
     <div id="cont">
       <form action="/" method="POST">
-            <label  id="label "><strong>Informe o Município:</label>
-              <input style="display:flexbox;" class="form-control" type="text", id="cidade" name="cidade" placeholder="Município">
+            <label style="color: rgb(87, 138, 139);"  id="label "><strong>Informe o Município:</label>
+              <input style="display:flexbox; border-radius: 15px;" class="form-control" type="text", id="cidade" name="cidade" placeholder="Município">
       </form>
-              <button  style="margin-left:45%;"type="submit"  id="btn" class="btn btn-success">Consultar</button>
+              <button style="margin-left:45%;"type="submit"  id="btn" class="btn btn-outline-success">Consultar</button>
     </div>
 
     {% block content %}
-    
+   
     <div id="tabela">
     <table class="table table-bordered">
       {% for item in context %}
@@ -39,8 +40,8 @@
         <th scope="col">Estado</th>
         <th scope="col">Unidade de Saúde</th>
         <th scope="col">Oferta de Respiradores</th>
-        <th scope="col">Oferta de Leitos CLI</th>
-        <th scope="col">Ocupação de Leitos CLI</th>
+        <th scope="col">Oferta de Leitos Clínicos</th>
+        <th scope="col">Ocupação de Leitos Clínicos</th>
         <th scope="col">Oferta de UTI</th>
         <th scope="col">Ocupação UTI</th>
         <th scope="col">Data da Notificação</th>
