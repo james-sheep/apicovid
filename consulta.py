@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-import pandas as pd
+
 
 def busca_api(cidade):
             
