@@ -4,6 +4,14 @@ from consulta import busca_api
 
 app = Flask(__name__)
 
+@app.route('/')
+def helloword():
+    return "oi oi oi "
+  
+
+
+
+
 @app.route('/index', methods=['GET','POST'])
 def index():
   
