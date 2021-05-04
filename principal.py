@@ -8,10 +8,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/index')
+@app.route('/index', methods=['GET','POST'])
 def index():
-    
-    contexto = busca_api("Aracaju")
+   
+    contexto = busca_api('Aracaju')
 
-    return render_template('index.html')
+    return render_template('index.html', context=contexto)
 

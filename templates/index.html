@@ -7,50 +7,64 @@
     <title>Título da página exemplo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    
+    <script src="{{url_for('static',filename='js/index.js')}}"   ></script>
 </head>
   
 <body>
 
-    <div id="covid" class="container">
+    <div id="covid">
             <img  id="imgcovid" src="{{ url_for('static', filename='covid.jpg')}}" alt="">
     </div>
-    <h4 id="titulo">CONSULTAR OCUPAÇÃO HOSPITALAR - CORONAVÍRUS</h4>
+    <h3 id="titulo">CORONAVÍRUS</h3>
+  
+    <h6 id="titulo">CONSULTAR OCUPAÇÃO HOSPITALAR</h6>
+    
 
-    <div id="cont" class="container">
-        
+    <div id="cont">
+      <form method="POST"></form>  
             <label  id="label "><strong>Informe o Município:</label>
      
-              <input type="email" class="form-control" id="colFormLabel" placeholder="Município">
-              <button style="border-radius: 5px; margin-left:40%; margin-top: 3%;" id="btn" type="button" class="btn btn-success">Consultar</button>
+              <input style="display:flexbox;" class="form-control" type="text", id="cidade" name="cidade" placeholder="Município">
+      </form>
+              <button  type="submit" style="border-radius: 5px; margin-left:40%; margin-top: 3%; display: inline-flex;" id="btn" class="btn btn-success">Consultar</button>
     </div>
 
-     
+    {% block content %}
+    
     <div id="tabela">
     <table class="table table-bordered">
+      {% for item in context %}
     <thead class="thead-light" >
+      
       <tr>
-        <th scope="col">NÚMERO</th>
-        <th scope="col">ÓRGAO JULGADOR</th>
-        <th scope="col">CLASSE</th>
-        <th scope="col">RESPONSÁVEL</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Unidade de Saúde</th>
+        <th scope="col">Oferta de Respiradores</th>
+        <th scope="col">Oferta de Leitos CLI</th>
+        <th scope="col">Ocupação de Leitos CLI</th>
+        <th scope="col">Oferta de UTI</th>
+        <th scope="col">Ocupação UTI</th>
+        <th scope="col">Data da Notificação</th>
+
       </tr>
     </thead>
     <tbody>
-    
-      <tr>
-     
-        <td> item.numero </td>
-        <td>item.orga</td>
-        <td> item.classe</td>
-        <td> item.responsável</td>
-        
-      </tr>
-    
       
+      <tr>
+        <td>{{item.estadoSigla}}</td>
+        <td>{{item.nomeCnes}}</td>
+        <td> {{item.ofertaRespiradores}}</td>
+        <td> {{item.ofertaHospCli}}</td>
+        <td> {{item.ocupHospCli}}</td>
+        <td> {{item.ofertaHospUti}}</td>
+        <td> {{item.ocupHospUti}}</td>
+        <td> {{item.dataNotificacaoOcupacao}}</td>
+      </tr>
+      {%endfor%}
     </tbody>
   </table>
   </div>
+  {% endblock %}
 
   
 </body>
