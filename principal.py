@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 from flask import Flask
 from consulta import busca_api
 
