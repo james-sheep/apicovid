@@ -59,19 +59,14 @@ body{
 
 #tabela_mobile{
 font-size: xx-small;
-width: min-content;
+width: max-content;
 
 
 }
 
 
 
-
-
-
-
-
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 480px){
 body{
 background-color:rgb(55, 42, 56);
 }
@@ -138,5 +133,14 @@ padding-bottom: 5%;
 padding-left: 5%;
 padding-right: 5%;
 }
+
+
+#tabela_mobile{
+    font-size:small;
+    width: 100%;
+    
+    
+    }
+
 
 }
